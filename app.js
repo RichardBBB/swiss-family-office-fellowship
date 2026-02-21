@@ -131,12 +131,17 @@
     if (!isOpen) item.classList.add('open');
   });
 
-  /* ── Form Handling ── */
+  /* ── Form Handling (Formspree) ── */
   const invForm = document.getElementById('invForm');
   const formSuccess = document.getElementById('formSuccess');
+  const submitBtn = invForm ? invForm.querySelector('button[type="submit"]') : null;
+
+  // Formspree endpoint — submissions go to richardblaese@icloud.com
+  // Note: On first submission Formspree will send a confirmation email to activate the form
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/richardblaese@icloud.com';
 
   if (invForm) {
-    invForm.addEventListener('submit', function (e) {
+    invForm.addEventListener('submit', async function (e) {
       e.preventDefault();
 
       const fullName = document.getElementById('fullName').value.trim();
@@ -155,18 +160,53 @@
         return;
       }
 
-      // Animate out form, show success
-      invForm.style.transition = 'opacity 400ms ease, transform 400ms ease';
-      invForm.style.opacity = '0';
-      invForm.style.transform = 'translateY(12px)';
+      // Show loading state
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+      }
 
-      setTimeout(() => {
-        invForm.style.display = 'none';
-        formSuccess.style.display = 'block';
-        formSuccess.style.opacity = '0';
-        formSuccess.style.transition = 'opacity 500ms ease';
-        setTimeout(() => { formSuccess.style.opacity = '1'; }, 50);
-      }, 400);
+      // Collect all form data
+      const formData = new FormData(invForm);
+
+      try {
+        const response = await fetch(FORMSPREE_ENDPOINT, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          // Animate out form, show success
+          invForm.style.transition = 'opacity 400ms ease, transform 400ms ease';
+          invForm.style.opacity = '0';
+          invForm.style.transform = 'translateY(12px)';
+
+          setTimeout(() => {
+            invForm.style.display = 'none';
+            formSuccess.style.display = 'block';
+            formSuccess.style.opacity = '0';
+            formSuccess.style.transition = 'opacity 500ms ease';
+            setTimeout(() => { formSuccess.style.opacity = '1'; }, 50);
+          }, 400);
+        } else {
+          const data = await response.json();
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Request invitation';
+          }
+          // Show inline error
+          let errMsg = 'Something went wrong. Please try again.';
+          if (data && data.errors) errMsg = data.errors.map(e => e.message).join(', ');
+          alert(errMsg);
+        }
+      } catch (err) {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Request invitation';
+        }
+        alert('Network error. Please check your connection and try again.');
+      }
     });
 
     // Remove error styling on input

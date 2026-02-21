@@ -89,6 +89,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300;400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
 
@@ -100,15 +101,20 @@
 <nav class="nav" id="mainNav">
   <a href="#" class="nav-logo" data-page="home">Swiss Family Office Fellowship</a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#" data-page="home" class="active">Home</a></li>
-    <li><a href="#" data-page="fellowship">Fellowship</a></li>
-    <li><a href="#" data-page="curation">Curation</a></li>
-    <li><a href="#" data-page="switzerland">Why Switzerland</a></li>
-    <li><a href="#" data-page="family-offices">For Family Offices</a></li>
-    <li><a href="#" data-page="partners">Partners</a></li>
-    <li><a href="#" data-page="faq">FAQ</a></li>
-    <li><a href="#" data-page="invitation" class="btn btn-primary" style="font-size:14px;padding:10px 18px;">Request an invitation</a></li>
+    <li><a href="#" data-page="home" class="active" data-i18n="nav-home">Home</a></li>
+    <li><a href="#" data-page="fellowship" data-i18n="nav-fellowship">Fellowship</a></li>
+    <li><a href="#" data-page="curation" data-i18n="nav-curation">Curation</a></li>
+    <li><a href="#" data-page="switzerland" data-i18n="nav-switzerland">Why Switzerland</a></li>
+    <li><a href="#" data-page="family-offices" data-i18n="nav-family-offices">For Family Offices</a></li>
+    <li><a href="#" data-page="partners" data-i18n="nav-partners">Partners</a></li>
+    <li><a href="#" data-page="faq" data-i18n="nav-faq">FAQ</a></li>
+    <li><a href="#" data-page="invitation" class="btn btn-primary" style="font-size:14px;padding:10px 18px;" data-i18n="nav-invitation">Request an invitation</a></li>
   </ul>
+  <div class="lang-switcher" id="langSwitcher">
+    <button class="lang-btn active" id="btnEN" data-lang="en" onclick="setLang('en')">EN</button>
+    <span class="lang-divider">|</span>
+    <button class="lang-btn" id="btnAR" data-lang="ar" onclick="setLang('ar')" style="font-family:'Noto Kufi Arabic',sans-serif;">عربي</button>
+  </div>
   <button class="nav-hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -124,15 +130,15 @@
     <div class="hero-bg" id="heroBg" style="background-image: url('images/palace-hotel-lucerne.jpg')"></div>
     <div class="hero-overlay"></div>
     <div class="container hero-content">
-      <div class="label" style="color:rgba(246,241,232,0.5); margin-bottom:var(--s-5);">Invite-only · Zurich + Swiss Alps</div>
-      <h1 class="fade-up">Swiss Family Office<br>Fellowship</h1>
-      <p class="hero-sub fade-up delay-1">Private access to Switzerland's innovation and investment ecosystem — curated for Middle East family offices.</p>
-      <p class="hero-sub fade-up delay-2" style="margin-top:var(--s-4); font-size:16px; max-width:580px;">A five-day, invite-only program combining jurisdiction-grade briefings, curated investment case deep dives, and discreet relationship building in Zurich and the Swiss Alps.</p>
+      <div class="label" style="color:rgba(246,241,232,0.5); margin-bottom:var(--s-5);" data-i18n="hero-label">Invite-only · Zurich + Swiss Alps</div>
+      <h1 class="fade-up" data-i18n="hero-h1" data-i18n-html>Swiss Family Office<br>Fellowship</h1>
+      <p class="hero-sub fade-up delay-1" data-i18n="hero-sub1">Private access to Switzerland's innovation and investment ecosystem — curated for Middle East family offices.</p>
+      <p class="hero-sub fade-up delay-2" style="margin-top:var(--s-4); font-size:16px; max-width:580px;" data-i18n="hero-sub2">A five-day, invite-only program combining jurisdiction-grade briefings, curated investment case deep dives, and discreet relationship building in Zurich and the Swiss Alps.</p>
       <div class="hero-ctas fade-up delay-3">
-        <a href="#" class="btn btn-primary" data-page="invitation">Request an invitation</a>
+        <a href="#" class="btn btn-primary" data-page="invitation" data-i18n="hero-cta1">Request an invitation</a>
         <a href="#" class="btn btn-secondary" data-page="fellowship">Receive the program overview</a>
       </div>
-      <p class="hero-micro fade-up delay-4">1–5 December 2026 · Zurich &amp; Swiss Alps · Closed-door format · Chatham House Rule</p>
+      <p class="hero-micro fade-up delay-4" data-i18n="hero-micro">1–5 December 2026 · Zurich &amp; Swiss Alps · Closed-door format · Chatham House Rule</p>
     </div>
   </section>
 
@@ -141,10 +147,10 @@
     <div class="container">
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--s-10); align-items:start;" class="split-responsive">
         <div>
-          <div class="label fade-up">At a glance</div>
-          <h2 class="fade-up delay-1" style="margin-top:var(--s-4);">In one view</h2>
-          <p class="fade-up delay-2" style="margin-top:var(--s-5); color:var(--c-muted);">A tightly curated, closed-door program for a small cohort of family offices with a genuine mandate for Swiss innovation.</p>
-          <a href="#" class="link fade-up delay-3" style="display:inline-block; margin-top:var(--s-6);" data-page="fellowship">Explore the fellowship →</a>
+          <div class="label fade-up" data-i18n="glance-label">At a glance</div>
+          <h2 class="fade-up delay-1" style="margin-top:var(--s-4);" data-i18n="glance-h2">In one view</h2>
+          <p class="fade-up delay-2" style="margin-top:var(--s-5); color:var(--c-muted);" data-i18n="glance-p">A tightly curated, closed-door program for a small cohort of family offices with a genuine mandate for Swiss innovation.</p>
+          <a href="#" class="link fade-up delay-3" style="display:inline-block; margin-top:var(--s-6);" data-page="fellowship" data-i18n="glance-link">Explore the fellowship →</a>
         </div>
         <div class="fact-grid fade-in delay-2">
           <div class="fact-item">
@@ -178,22 +184,22 @@
   <!-- What you gain -->
   <section class="section" style="background:#EEE9DF;">
     <div class="container">
-      <div class="label fade-up">What you gain</div>
-      <h2 class="fade-up delay-1" style="margin-top:var(--s-4); max-width:560px;">Designed for long-term capital</h2>
+      <div class="label fade-up" data-i18n="gain-label">What you gain</div>
+      <h2 class="fade-up delay-1" style="margin-top:var(--s-4); max-width:560px;" data-i18n="gain-h2">Designed for long-term capital</h2>
       <div class="cards-grid">
         <div class="card fade-up delay-1">
           <div class="card-number">01</div>
-          <h3>Clarity</h3>
+          <h3 data-i18n="gain-card1-h3">Clarity</h3>
           <p>Understand how investing in Switzerland works in practice — structures, governance norms, and how trusted circles co-invest.</p>
         </div>
         <div class="card fade-up delay-2">
           <div class="card-number">02</div>
-          <h3>Access</h3>
+          <h3 data-i18n="gain-card2-h3">Access</h3>
           <p>Meet a carefully selected group of Swiss family offices, lead angels, strategic capital, and founders — in settings designed for depth.</p>
         </div>
         <div class="card fade-up delay-3">
           <div class="card-number">03</div>
-          <h3>Continuity</h3>
+          <h3 data-i18n="gain-card3-h3">Continuity</h3>
           <p>Join an alumni circle with optional follow-up access to curated introductions and private briefings.</p>
         </div>
       </div>
@@ -219,7 +225,7 @@
       <div class="split">
         <div>
           <div class="label fade-up">Locations</div>
-          <h2 class="fade-up delay-1" style="margin-top:var(--s-4);">Zurich briefings.<br>Alpine retreat.</h2>
+          <h2 class="fade-up delay-1" style="margin-top:var(--s-4);" data-i18n="hero-h2" data-i18n-html>Zurich briefings.<br>Alpine retreat.</h2>
           <p class="fade-up delay-2" style="margin-top:var(--s-5); color:var(--c-muted);">Zurich provides institutional context and direct ecosystem access. The alpine retreat creates the privacy and time required for real alignment — with peers and with opportunities.</p>
           <div class="fade-up delay-3" style="margin-top:var(--s-6);">
             <a href="#" class="btn btn-primary" data-page="fellowship">See the full program</a>
@@ -232,8 +238,8 @@
       <div class="divider"></div>
       <div class="split reverse">
         <div>
-          <div class="label fade-up">The city</div>
-          <h2 class="fade-up delay-1" style="margin-top:var(--s-4);">Zurich: where governance meets innovation</h2>
+          <div class="label fade-up" data-i18n="city-label">The city</div>
+          <h2 class="fade-up delay-1" style="margin-top:var(--s-4);" data-i18n="city-h2">Zurich: where governance meets innovation</h2>
           <p class="fade-up delay-2" style="margin-top:var(--s-5); color:var(--c-muted);">One of the world's most stable financial centres, home to world-class research institutions, disciplined capital, and a culture of long-term stewardship.</p>
         </div>
         <div class="split-img fade-in delay-2">
@@ -248,8 +254,8 @@
     <div class="container">
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--s-10); align-items:start;" class="split-responsive">
         <div>
-          <div class="label fade-up">Confidentiality</div>
-          <h2 class="fade-up delay-1" style="margin-top:var(--s-4);">Discretion is a design principle</h2>
+          <div class="label fade-up" data-i18n="conf-label">Confidentiality</div>
+          <h2 class="fade-up delay-1" style="margin-top:var(--s-4);" data-i18n="conf-h2">Discretion is a design principle</h2>
           <p class="fade-up delay-2" style="margin-top:var(--s-5); color:var(--c-muted);">We keep cohorts intentionally small to protect confidentiality and maximise relevance.</p>
           <div class="fade-up delay-3" style="margin-top:var(--s-7);">
             <a href="#" class="btn btn-primary" data-page="invitation">Request an invitation</a>
@@ -270,7 +276,7 @@
     <div class="container">
       <div class="label fade-up" style="color:rgba(246,241,232,0.4);">Next cohort · December 2026</div>
       <h2 class="fade-up delay-1" style="margin-top:var(--s-4);">Next cohort: 1–5 December 2026</h2>
-      <p class="fade-up delay-2">Zurich briefings from 1–3 December, Alpine retreat 4–5 December. Invitations are confirmed individually. Request your place now.</p>
+      <p class="fade-up delay-2" data-i18n="home-cta-p">Zurich briefings from 1–3 December, Alpine retreat 4–5 December. Invitations are confirmed individually. Request your place now.</p>
       <div class="fade-up delay-3">
         <a href="#" class="btn btn-primary" data-page="invitation">Request an invitation</a>
       </div>
@@ -288,40 +294,40 @@
 
   <section class="sub-hero">
     <div class="container">
-      <div class="label fade-up" style="color:rgba(246,241,232,0.4);">The Fellowship</div>
+      <div class="label fade-up" style="color:rgba(246,241,232,0.4);" data-i18n="fell-label">The Fellowship</div>
       <h1 class="fade-up delay-1" style="margin-top:var(--s-4); max-width:700px;">A five-day program designed for family offices investing into innovation.</h1>
       <p class="fade-up delay-2">Discreet. Governance-first. Curated for relevance.</p>
       <div class="hero-ctas fade-up delay-3">
         <a href="#" class="btn btn-primary" data-page="invitation">Request an invitation</a>
       </div>
-      <p class="hero-micro fade-up delay-4">1–5 December 2026 · Zurich + Alpine retreat · Invite-only cohort</p>
+      <p class="hero-micro fade-up delay-4" data-i18n="fell-micro">1–5 December 2026 · Zurich + Alpine retreat · Invite-only cohort</p>
     </div>
   </section>
 
   <!-- Architecture -->
   <section class="section">
     <div class="container">
-      <div class="label fade-up">Architecture</div>
-      <h2 class="fade-up delay-1" style="margin-top:var(--s-4);">Three layers — one purpose</h2>
+      <div class="label fade-up" data-i18n="fell-arch-label">Architecture</div>
+      <h2 class="fade-up delay-1" style="margin-top:var(--s-4);" data-i18n="fell-arch-h2">Three layers — one purpose</h2>
       <div class="layers" style="margin-top:var(--s-7);">
         <div class="layer-item fade-up delay-1">
           <div class="layer-num">Layer 01</div>
           <div>
-            <h3>Jurisdiction &amp; governance</h3>
+            <h3 data-i18n="fell-layer1-h3">Jurisdiction &amp; governance</h3>
             <p>Briefings on structures, control rights, risk framing, and local co-investment norms.</p>
           </div>
         </div>
         <div class="layer-item fade-up delay-2">
           <div class="layer-num">Layer 02</div>
           <div>
-            <h3>Curated investment access</h3>
+            <h3 data-i18n="fell-layer2-h3">Curated investment access</h3>
             <p>Deep dives into a limited number of vetted cases — long-form Q&amp;A, not stage pitching.</p>
           </div>
         </div>
         <div class="layer-item fade-up delay-3">
           <div class="layer-num">Layer 03</div>
           <div>
-            <h3>Relationship &amp; continuity</h3>
+            <h3 data-i18n="fell-layer3-h3">Relationship &amp; continuity</h3>
             <p>Private peer exchange and an alumni circle enabling long-term access and repeat collaboration.</p>
           </div>
         </div>
@@ -333,7 +339,7 @@
   <div class="img-section">
     <img src="images/palace-hotel-lucerne.jpg" alt="Palace Hotel Lucerne" loading="lazy" />
     <div class="img-section-content">
-      <h2 class="fade-up">Governance-first. Depth over volume.</h2>
+      <h2 class="fade-up" data-i18n="fell-gov-h2">Governance-first. Depth over volume.</h2>
       <p class="fade-up delay-1">Every session is designed to protect confidentiality and enable informed decision-making.</p>
     </div>
   </div>
@@ -341,13 +347,13 @@
   <!-- Day by day -->
   <section class="section">
     <div class="container">
-      <div class="label fade-up">Program flow</div>
-      <h2 class="fade-up delay-1" style="margin-top:var(--s-4);">Day by day</h2>
+      <div class="label fade-up" data-i18n="fell-day-label">Program flow</div>
+      <h2 class="fade-up delay-1" style="margin-top:var(--s-4);" data-i18n="fell-day-h2">Day by day</h2>
       <div class="day-accordion" style="margin-top:var(--s-7);">
         <div class="day-item fade-up delay-1">
           <div class="day-header">
             <span class="day-tag">Day 0</span>
-            <span class="day-title">Arrival &amp; alignment</span>
+            <span class="day-title" data-i18n="day0-title">Arrival &amp; alignment</span>
             <span class="day-icon"></span>
           </div>
           <div class="day-body">
@@ -415,8 +421,8 @@
   <!-- Included -->
   <section class="section" style="background:#EEE9DF;">
     <div class="container" style="max-width:720px;">
-      <div class="label fade-up">Included</div>
-      <h2 class="fade-up delay-1" style="margin-top:var(--s-4);">What is included</h2>
+      <div class="label fade-up" data-i18n="fell-included-label">Included</div>
+      <h2 class="fade-up delay-1" style="margin-top:var(--s-4);" data-i18n="fell-included-h2">What is included</h2>
       <ul class="included-list fade-up delay-2">
         <li>Fellowship sessions and private convenings</li>
         <li>Curated access to vetted cases and relevant counterparties</li>
@@ -429,12 +435,12 @@
   <!-- Footer CTA -->
   <section class="footer-cta">
     <div class="container">
-      <h2 class="fade-up">Ready to explore the fellowship?</h2>
+      <h2 class="fade-up" data-i18n="fell-cta-h2">Ready to explore the fellowship?</h2>
       <p class="fade-up delay-1">Request an invitation and we will confirm fit and next steps personally.</p>
       <div class="fade-up delay-2">
         <a href="#" class="btn btn-primary" data-page="invitation">Request an invitation</a>
       </div>
-      <span class="small fade-up delay-3">We respond personally. No newsletters.</span>
+      <span class="small fade-up delay-3" data-i18n="respond-note">We respond personally. No newsletters.</span>
     </div>
   </section>
 
@@ -448,8 +454,8 @@
 
   <section class="sub-hero">
     <div class="container">
-      <div class="label fade-up" style="color:rgba(246,241,232,0.4);">Curation &amp; Deal Access</div>
-      <h1 class="fade-up delay-1" style="margin-top:var(--s-4);">Curation is the product.</h1>
+      <div class="label fade-up" style="color:rgba(246,241,232,0.4);" data-i18n="cur-label">Curation &amp; Deal Access</div>
+      <h1 class="fade-up delay-1" style="margin-top:var(--s-4);" data-i18n="cur-h1">Curation is the product.</h1>
       <p class="fade-up delay-2">We limit the number of cases to protect confidentiality and maximise depth.</p>
       <div class="hero-ctas fade-up delay-3">
         <a href="#" class="btn btn-primary" data-page="invitation">Request an invitation</a>
@@ -460,23 +466,23 @@
   <!-- Standard -->
   <section class="section">
     <div class="container">
-      <div class="label fade-up">Our standard</div>
-      <h2 class="fade-up delay-1" style="margin-top:var(--s-4);">Our curation standard</h2>
+      <div class="label fade-up" data-i18n="cur-std-label">Our standard</div>
+      <h2 class="fade-up delay-1" style="margin-top:var(--s-4);" data-i18n="cur-std-h2">Our curation standard</h2>
       <div class="standard-grid">
         <div class="pillar-card fade-up delay-1">
-          <h3>Governance readiness</h3>
+          <h3 data-i18n="cur-gov-h3">Governance readiness</h3>
           <p>Clear decision-making, clean cap-table logic, and investor-grade documentation.</p>
         </div>
         <div class="pillar-card fade-up delay-2">
-          <h3>IP &amp; defensibility</h3>
+          <h3 data-i18n="cur-ip-h3">IP &amp; defensibility</h3>
           <p>Clarity on ownership, assignment, and protection strategy (especially for spin-outs).</p>
         </div>
         <div class="pillar-card fade-up delay-3">
-          <h3>Financing logic</h3>
+          <h3 data-i18n="cur-fin-h3">Financing logic</h3>
           <p>Defined capital needs, milestones, and follow-on scenarios.</p>
         </div>
         <div class="pillar-card fade-up delay-4">
-          <h3>Relevance</h3>
+          <h3 data-i18n="cur-rel-h3">Relevance</h3>
           <p>Fit to cohort mandates and risk tolerance — not popularity.</p>
         </div>
       </div>
@@ -486,8 +492,8 @@
   <!-- Deep dive anatomy -->
   <section class="section" style="background:#EEE9DF;">
     <div class="container">
-      <div class="label fade-up">Deep dives</div>
-      <h2 class="fade-up delay-1" style="margin-top:var(--s-4);">Case deep dives are investor conversations</h2>
+      <div class="label fade-up" data-i18n="cur-deep-label">Deep dives</div>
+      <h2 class="fade-up delay-1" style="margin-top:var(--s-4);" data-i18n="cur-deep-h2">Case deep dives are investor conversations</h2>
       <ul class="dive-list fade-up delay-2">
         <li>Market thesis &amp; timing</li>
         <li>Product moat and IP position</li>
@@ -543,8 +549,8 @@
 
   <section class="sub-hero">
     <div class="container">
-      <div class="label fade-up" style="color:rgba(246,241,232,0.4);">Why Switzerland</div>
-      <h1 class="fade-up delay-1" style="margin-top:var(--s-4); max-width:700px;">A stable jurisdiction for long-term capital — with world-class IP creation.</h1>
+      <div class="label fade-up" style="color:rgba(246,241,232,0.4);" data-i18n="ch-label">Why Switzerland</div>
+      <h1 class="fade-up delay-1" style="margin-top:var(--s-4); max-width:700px;" data-i18n="ch-h1">A stable jurisdiction for long-term capital — with world-class IP creation.</h1>
       <div class="hero-ctas fade-up delay-2">
         <a href="#" class="btn btn-primary" data-page="fellowship">Explore the fellowship</a>
       </div>
@@ -554,27 +560,27 @@
   <!-- Four pillars -->
   <section class="section">
     <div class="container">
-      <div class="label fade-up">The case</div>
-      <h2 class="fade-up delay-1" style="margin-top:var(--s-4);">Why Switzerland — in four pillars</h2>
+      <div class="label fade-up" data-i18n="ch-pillar-label">The case</div>
+      <h2 class="fade-up delay-1" style="margin-top:var(--s-4);" data-i18n="ch-pillar-h2">Why Switzerland — in four pillars</h2>
       <div class="pillars-grid">
         <div class="pillar-card fade-up delay-1">
           <div class="card-number">01</div>
-          <h3>Rule-of-law and predictability</h3>
+          <h3 data-i18n="ch-p1-h3">Rule-of-law and predictability</h3>
           <p>A governance environment suited to long-term stewardship.</p>
         </div>
         <div class="pillar-card fade-up delay-2">
           <div class="card-number">02</div>
-          <h3>High IP creation density</h3>
+          <h3 data-i18n="ch-p2-h3">High IP creation density</h3>
           <p>Strong scientific and industrial innovation, particularly in deeptech and life sciences.</p>
         </div>
         <div class="pillar-card fade-up delay-3">
           <div class="card-number">03</div>
-          <h3>Disciplined investment culture</h3>
+          <h3 data-i18n="ch-p3-h3">Disciplined investment culture</h3>
           <p>Quality control, engineering rigour, and conservative governance norms.</p>
         </div>
         <div class="pillar-card fade-up delay-4">
           <div class="card-number">04</div>
-          <h3>Selective access</h3>
+          <h3 data-i18n="ch-p4-h3">Selective access</h3>
           <p>The challenge is rarely quality. It is access — which is what this fellowship is designed to solve.</p>
         </div>
       </div>
@@ -608,7 +614,7 @@
   <!-- Footer CTA -->
   <section class="footer-cta">
     <div class="container">
-      <h2 class="fade-up">Switzerland is ready. Are you?</h2>
+      <h2 class="fade-up" data-i18n="cur-cta-h2">Switzerland is ready. Are you?</h2>
       <p class="fade-up delay-1">Join a small cohort of family offices exploring Switzerland's most compelling investment opportunities.</p>
       <div class="fade-up delay-2">
         <a href="#" class="btn btn-primary" data-page="invitation">Request an invitation</a>
@@ -627,23 +633,23 @@
 
   <section class="sub-hero">
     <div class="container">
-      <div class="label fade-up" style="color:rgba(246,241,232,0.4);">For Family Offices</div>
-      <h1 class="fade-up delay-1" style="margin-top:var(--s-4); max-width:640px;">Designed for family offices seeking governed access to innovation.</h1>
+      <div class="label fade-up" style="color:rgba(246,241,232,0.4);" data-i18n="fo-label">For Family Offices</div>
+      <h1 class="fade-up delay-1" style="margin-top:var(--s-4); max-width:640px;" data-i18n="fo-h1">Designed for family offices seeking governed access to innovation.</h1>
       <div class="hero-ctas fade-up delay-2">
         <a href="#" class="btn btn-primary" data-page="invitation">Request an invitation</a>
       </div>
-      <p class="hero-micro fade-up delay-3">8–12 family offices · Invite-only</p>
+      <p class="hero-micro fade-up delay-3" data-i18n="fo-micro">8–12 family offices · Invite-only</p>
     </div>
   </section>
 
   <!-- Fit -->
   <section class="section">
     <div class="container">
-      <div class="label fade-up">Fit</div>
-      <h2 class="fade-up delay-1" style="margin-top:var(--s-4);">Is this the right program for you?</h2>
+      <div class="label fade-up" data-i18n="fo-fit-label">Fit</div>
+      <h2 class="fade-up delay-1" style="margin-top:var(--s-4);" data-i18n="fo-fit-h2">Is this the right program for you?</h2>
       <div class="fit-grid">
         <div class="fit-col fade-up delay-1">
-          <h3 style="color:var(--c-navy);">A strong fit if you…</h3>
+          <h3 style="color:var(--c-navy);" data-i18n="fo-fit-yes-h3">A strong fit if you…</h3>
           <ul>
             <li>invest privately with a long-term horizon</li>
             <li>value governance and discretion</li>
@@ -652,7 +658,7 @@
           </ul>
         </div>
         <div class="fit-col not-for fade-up delay-2">
-          <h3 style="color:var(--c-muted);">Not designed for</h3>
+          <h3 style="color:var(--c-muted);" data-i18n="fo-fit-no-h3">Not designed for</h3>
           <ul>
             <li>delegations seeking visibility or public exposure</li>
             <li>intermediaries focused on volume dealflow</li>
@@ -666,8 +672,8 @@
   <!-- Selection -->
   <section class="section" style="background:#EEE9DF;">
     <div class="container" style="max-width:720px;">
-      <div class="label fade-up">Selection</div>
-      <h2 class="fade-up delay-1" style="margin-top:var(--s-4);">Selection and cohort matching</h2>
+      <div class="label fade-up" data-i18n="fo-sel-label">Selection</div>
+      <h2 class="fade-up delay-1" style="margin-top:var(--s-4);" data-i18n="fo-sel-h2">Selection and cohort matching</h2>
       <p class="fade-up delay-2" style="margin-top:var(--s-5); color:var(--c-muted);">We keep cohorts intentionally small. Invitations are based on mandate alignment, ticket range, sector relevance, and long-term engagement potential.</p>
       <div class="fade-up delay-3" style="margin-top:var(--s-7);">
         <a href="#" class="btn btn-primary" data-page="invitation">Request an invitation</a>
@@ -679,7 +685,7 @@
   <!-- Footer CTA -->
   <section class="footer-cta">
     <div class="container">
-      <h2 class="fade-up">The right cohort matters.</h2>
+      <h2 class="fade-up" data-i18n="fo-cta-h2">The right cohort matters.</h2>
       <p class="fade-up delay-1">We confirm fit before sharing program details. Request an invitation to begin.</p>
       <div class="fade-up delay-2">
         <a href="#" class="btn btn-primary" data-page="invitation">Request an invitation</a>
@@ -698,8 +704,8 @@
 
   <section class="sub-hero">
     <div class="container">
-      <div class="label fade-up" style="color:rgba(246,241,232,0.4);">Partners &amp; Governance</div>
-      <h1 class="fade-up delay-1" style="margin-top:var(--s-4);">Anchored by trusted institutions.<br>Designed for neutrality.</h1>
+      <div class="label fade-up" style="color:rgba(246,241,232,0.4);" data-i18n="par-label">Partners &amp; Governance</div>
+      <h1 class="fade-up delay-1" style="margin-top:var(--s-4);" data-i18n="par-h1" data-i18n-html>Anchored by trusted institutions.<br>Designed for neutrality.</h1>
       <p class="hero-micro fade-up delay-2" style="margin-top:var(--s-5);">Partner details may vary per cohort and are shared upon invitation.</p>
     </div>
   </section>
@@ -707,8 +713,8 @@
   <!-- Neutrality -->
   <section class="section">
     <div class="container" style="max-width:720px;">
-      <div class="label fade-up">Neutrality</div>
-      <h2 class="fade-up delay-1" style="margin-top:var(--s-4);">Neutral, governance-first convening</h2>
+      <div class="label fade-up" data-i18n="par-neut-label">Neutrality</div>
+      <h2 class="fade-up delay-1" style="margin-top:var(--s-4);" data-i18n="par-neut-h2">Neutral, governance-first convening</h2>
       <p class="fade-up delay-2" style="margin-top:var(--s-5); color:var(--c-muted);">The fellowship is structured to protect confidentiality and align incentives. We do not operate as a broker. We convene, curate, and facilitate informed access.</p>
     </div>
   </section>
@@ -716,17 +722,17 @@
    <!-- Partners -->
   <section class="section" style="background:#EEE9DF;">
     <div class="container">
-      <div class="label fade-up">Partners</div>
-      <h2 class="fade-up delay-1" style="margin-top:var(--s-4);">Curated by trusted partners</h2>
+      <div class="label fade-up" data-i18n="par-conf-label">Partners</div>
+      <h2 class="fade-up delay-1" style="margin-top:var(--s-4);" data-i18n="par-curated-label">Curated by trusted partners</h2>
       <p class="fade-up delay-2" style="margin-top:var(--s-5); color:var(--c-muted); max-width:600px;">The fellowship is convened in collaboration with established ecosystem partners who share our commitment to governance, discretion, and long-term value creation.</p>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--s-6); margin-top:var(--s-7);" class="split-responsive">
         <div class="card fade-up delay-1">
-          <div class="label" style="margin-bottom:var(--s-4);">Ecosystem Partner</div>
+          <div class="label" style="margin-bottom:var(--s-4);" data-i18n="par-fh-role">Ecosystem Partner</div>
           <h3 style="margin-bottom:var(--s-3);">Founders Hive</h3>
           <p style="color:var(--c-muted);">A curated network connecting founders, investors, and family offices across Switzerland and the broader European innovation ecosystem.</p>
         </div>
         <div class="card fade-up delay-2">
-          <div class="label" style="margin-bottom:var(--s-4);">Investment Partner</div>
+          <div class="label" style="margin-bottom:var(--s-4);" data-i18n="par-fc-role">Investment Partner</div>
           <h3 style="margin-bottom:var(--s-3);">Founder &amp; Capital</h3>
           <a href="https://www.founderandcapital.com" target="_blank" rel="noopener noreferrer" class="link" style="display:inline-block; margin-bottom:var(--s-4); font-size:var(--small);">founderandcapital.com</a>
           <p style="color:var(--c-muted);">Specialist in connecting founder-led businesses with long-term capital partners. Brings deep expertise in deal structuring and investor relations.</p>
@@ -741,7 +747,7 @@
     <div class="container">
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--s-10); align-items:start;" class="split-responsive">
         <div>
-          <div class="label fade-up">Conduct</div>
+          <div class="label fade-up" data-i18n="par-conf-label">Conduct</div>
           <h2 class="fade-up delay-1" style="margin-top:var(--s-4);">Confidentiality and conduct</h2>
           <p class="fade-up delay-2" style="margin-top:var(--s-5); color:var(--c-muted);">Every aspect of the program is designed to protect participants and enable candid exchange.</p>
           <div class="fade-up delay-3" style="margin-top:var(--s-7);">
@@ -781,7 +787,7 @@
   <section class="sub-hero" style="padding-bottom:var(--s-8);">
     <div class="container">
       <div class="label fade-up" style="color:rgba(246,241,232,0.4);">Private Access</div>
-      <h1 class="fade-up delay-1" style="margin-top:var(--s-4);">Request an invitation</h1>
+      <h1 class="fade-up delay-1" style="margin-top:var(--s-4);" data-i18n="inv-h1">Request an invitation</h1>
       <p class="fade-up delay-2">We keep cohorts intentionally small to protect confidentiality and maximise relevance. Share a few details and we will confirm fit and next steps.</p>
       <p class="hero-micro fade-up delay-3" style="margin-top:var(--s-4);">This is not a public registration.</p>
     </div>
@@ -874,8 +880,8 @@
 
   <section class="sub-hero">
     <div class="container">
-      <div class="label fade-up" style="color:rgba(246,241,232,0.4);">Questions</div>
-      <h1 class="fade-up delay-1" style="margin-top:var(--s-4);">Frequently asked questions</h1>
+      <div class="label fade-up" style="color:rgba(246,241,232,0.4);" data-i18n="faq-label">Questions</div>
+      <h1 class="fade-up delay-1" style="margin-top:var(--s-4);" data-i18n="faq-h1">Frequently asked questions</h1>
     </div>
   </section>
 
@@ -990,7 +996,7 @@
   <!-- Footer CTA -->
   <section class="footer-cta">
     <div class="container">
-      <h2 class="fade-up">Still have questions?</h2>
+      <h2 class="fade-up" data-i18n="faq-cta-h2">Still have questions?</h2>
       <p class="fade-up delay-1">Request an invitation and we will respond personally with any further information you need.</p>
       <div class="fade-up delay-2">
         <a href="#" class="btn btn-primary" data-page="invitation">Request an invitation</a>
@@ -1009,13 +1015,13 @@
 
   <section class="sub-hero">
     <div class="container">
-      <div class="label fade-up" style="color:rgba(246,241,232,0.4);">Contact</div>
-      <h1 class="fade-up delay-1" style="margin-top:var(--s-4);">Private inquiry</h1>
+      <div class="label fade-up" style="color:rgba(246,241,232,0.4);" data-i18n="con-label">Contact</div>
+      <h1 class="fade-up delay-1" style="margin-top:var(--s-4);" data-i18n="con-h1">Private inquiry</h1>
       <p class="fade-up delay-2">For partnership conversations or confidential questions, reach out directly.</p>
       <div class="hero-ctas fade-up delay-3">
         <a href="#" class="btn btn-primary" data-page="invitation">Request an invitation</a>
       </div>
-      <p class="hero-micro fade-up delay-4" style="margin-top:var(--s-4);">We respond personally.</p>
+      <p class="hero-micro fade-up delay-4" style="margin-top:var(--s-4);" data-i18n="con-micro">We respond personally.</p>
     </div>
   </section>
 
@@ -1026,7 +1032,7 @@
         <p style="color:var(--c-muted); margin-top:var(--s-5);">If you represent a family office, institution, or potential partner and would like to explore a conversation, please use the invitation request form or reach out directly.</p>
       </div>
       <div class="card fade-up delay-1" style="margin-top:var(--s-7); max-width:420px;">
-        <div class="label" style="margin-bottom:var(--s-4);">Direct contact</div>
+        <div class="label" style="margin-bottom:var(--s-4);" data-i18n="con-direct-label">Direct contact</div>
         <p style="font-weight:600; font-size:20px; margin-bottom:var(--s-2);">Dr. Richard Bläse</p>
         <p style="color:var(--c-muted); margin-bottom:var(--s-4);">Swiss Family Office Fellowship</p>
         <p style="color:var(--c-muted); font-size:var(--small);">Please use the invitation form to get in touch. We respond personally.</p>
@@ -1048,17 +1054,18 @@
   <div class="footer-inner">
     <a href="#" class="footer-brand" data-page="home">Swiss Family Office Fellowship</a>
     <ul class="footer-links">
-      <li><a href="#" data-page="fellowship">Fellowship</a></li>
-      <li><a href="#" data-page="curation">Curation</a></li>
-      <li><a href="#" data-page="switzerland">Why Switzerland</a></li>
-      <li><a href="#" data-page="invitation">Request an invitation</a></li>
-      <li><a href="#" data-page="contact">Private inquiry</a></li>
-      <li><a href="#" data-page="faq">FAQ</a></li>
+      <li><a href="#" data-page="fellowship" data-i18n="footer-fellowship">Fellowship</a></li>
+      <li><a href="#" data-page="curation" data-i18n="footer-curation">Curation</a></li>
+      <li><a href="#" data-page="switzerland" data-i18n="footer-switzerland">Why Switzerland</a></li>
+      <li><a href="#" data-page="invitation" data-i18n="footer-invitation">Request an invitation</a></li>
+      <li><a href="#" data-page="contact" data-i18n="footer-contact">Private inquiry</a></li>
+      <li><a href="#" data-page="faq" data-i18n="footer-faq">FAQ</a></li>
     </ul>
-    <p class="footer-micro">Contact: <strong>Dr. Richard Bläse</strong> &nbsp;·&nbsp; Next cohort: 1–5 December 2026 &nbsp;·&nbsp; We respond personally. No newsletters. &nbsp;·&nbsp; &copy; 2026 Swiss Family Office Fellowship. All rights reserved.</p>
+    <p class="footer-micro" data-i18n="footer-micro">Contact: <strong>Dr. Richard Bläse</strong> &nbsp;·&nbsp; Next cohort: 1–5 December 2026 &nbsp;·&nbsp; We respond personally. No newsletters. &nbsp;·&nbsp; &copy; 2026 Swiss Family Office Fellowship. All rights reserved.</p>
   </div>
 </footer>
 
+<script src="i18n.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

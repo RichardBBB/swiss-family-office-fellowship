@@ -137,7 +137,9 @@
   const submitBtn = invForm ? invForm.querySelector('button[type="submit"]') : null;
 
   // Formspree endpoint — submissions go to richardblaese@icloud.com
-  // Note: On first submission Formspree will send a confirmation email to activate the form
+  // IMPORTANT: On the very first submission, Formspree sends a one-time confirmation
+  // email to richardblaese@icloud.com. Click the link in that email to activate.
+  // After activation, all submissions arrive instantly in your inbox.
   const FORMSPREE_ENDPOINT = 'https://formspree.io/richardblaese@icloud.com';
 
   if (invForm) {
